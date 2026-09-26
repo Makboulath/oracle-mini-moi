@@ -32,7 +32,73 @@
         <button class="btn btn-dark" data-go="form">Découvrir mon avenir</button>
       </div>
     </section>
+    <section class="screen" data-screen="form">
+      <div class="card form-card">
+        <p class="eyebrow">étape 01 · le brief</p>
+        <h2>Dis-moi qui tu es.</h2>
+        <form id="oracle-form">
+          <label>Prénom<input type="text" name="prenom" required maxlength="32" placeholder="ex. Awa" autocomplete="given-name" /></label>
+          <label>Date de naissance<input type="date" name="naissance" required /></label>
+          <label>Ton objectif du moment<input type="text" name="objectif" required maxlength="80" placeholder="lancer un projet, respirer, signer…" /></label>
+          <label>Ta couleur préférée<input type="text" name="couleur" required maxlength="24" placeholder="ivoire, violet, noir…" /></label>
+          <label>Ce que tu ressens aujourd'hui<input type="text" name="humeur" required maxlength="60" placeholder="électrique, fatigué·e, en feu…" /></label>
+          <div class="row">
+            <button type="button" class="btn btn-ghost" data-go="landing">Retour</button>
+            <button type="submit" class="btn btn-dark">Lire les signes</button>
+          </div>
+        </form>
+      </div>
+    </section>
+    <section class="screen" data-screen="loading">
+      <div class="crystal-wrap">
+        <div class="crystal">
+          <span class="orb"></span>
+          <span class="ring"></span>
+          <span class="ring delay"></span>
+        </div>
+        <p class="load-line" id="load-line">Mini Moi cherche…</p>
+      </div>
+    </section>
+    <section class="screen" data-screen="result">
+      <article class="card result-card">
+        <p class="eyebrow" id="result-kicker">carte du jour</p>
+        <h2 id="result-title">Ta prédiction</h2>
+        <p class="result-body" id="result-body"></p>
+        <ul class="chips" id="result-chips"></ul>
+        <div class="row">
+          <button class="btn btn-dark" id="share-btn">Partager</button>
+          <button class="btn btn-ghost" data-go="form">Recommencer</button>
+        </div>
+      </article>
+    </section>
   </main>
+  <button class="fab" id="fab" aria-label="Ouvrir Mini Moi">
+    <img class="fab-face" src="assets/mini-moi.jpg" alt="Mini Moi" />
+    <span class="fab-dot"></span>
+  </button>
+  <aside class="chat" id="chat" aria-hidden="true">
+    <header class="chat-head">
+      <img class="chat-face" src="assets/mini-moi.jpg" alt="Mini Moi" />
+      <div>
+        <strong>Mini Moi</strong>
+        <span>assistante de Makboulath</span>
+      </div>
+      <button class="icon-btn" id="chat-close" aria-label="Fermer">✕</button>
+    </header>
+    <div class="chat-log" id="chat-log"></div>
+    <div class="quick">
+      <button data-act="amour">Amour</button>
+      <button data-act="argent">Argent</button>
+      <button data-act="travail">Travail</button>
+      <button data-act="ressenti">Je ressens</button>
+      <button data-act="bravo">Bonne nouvelle</button>
+      <button data-act="chanson">Une chanson</button>
+    </div>
+    <form class="chat-form" id="chat-form">
+      <input type="text" id="chat-input" placeholder="Dis-moi ce qui se passe…" maxlength="180" autocomplete="off" />
+      <button type="submit" class="btn btn-dark sm">Envoyer</button>
+    </form>
+  </aside>
   <script src="app.js"></script>
 </body>
 </html>
